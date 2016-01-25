@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.ceronloja.ws.PessoaBean;
 import br.com.ceronloja.ws.model.Pessoa;
 import br.com.ceronloja.ws.repository.PessoaRepository;
 
@@ -29,12 +30,12 @@ public class PessoaServiceBean implements PessoaService {
 	}
 
 	@Override
-	@Transactional(propagation = Propagation.REQUIRED,
-					  readOnly = true)
-	public Pessoa create(Pessoa pessoa) {
-		if(pessoa.getId() != null)
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+	public Pessoa create(PessoaBean pessoaBean) {
+		if(pessoaBean.id != null)
 			return null;
 		
+		Pessoa pessoa = new Pessoa(pessoaBean);
 		return repository.save(pessoa);
 	}
 

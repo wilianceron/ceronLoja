@@ -33,20 +33,20 @@ public class PessoaControllerTest {
 	public void setUp() {
 		pessoaController = new PessoaController(pessoaService);
 	}
-	
-	@Test
-	public void deveriaCriarNovaPessoa() {
-		when(pessoaService.create(any(Pessoa.class))).thenReturn(criaPessoaJoao());
-		
-		Pessoa pessoa = criaPessoaJoao();
-		ResponseEntity<Pessoa> response = pessoaController.criaPessoa(pessoa);
-		Pessoa pessoaCriada = response.getBody();
-		
-		verify(pessoaService,times(1)).create(pessoa);
-		
-		assertEquals("1", pessoaCriada.getId().toString());
-		assertEquals("João da Silva", pessoaCriada.getNome());
-	}
+//	
+//	@Test
+//	public void deveriaCriarNovaPessoa() {
+//		when(pessoaService.create(any(Pessoa.class))).thenReturn(criaPessoaJoao());
+//		
+//		Pessoa pessoa = criaPessoaJoao();
+//		ResponseEntity<Pessoa> response = pessoaController.criaPessoa(pessoa);
+//		Pessoa pessoaCriada = response.getBody();
+//		
+//		verify(pessoaService,times(1)).create(pessoa);
+//		
+//		assertEquals("1", pessoaCriada.getId().toString());
+//		assertEquals("João da Silva", pessoaCriada.getNome());
+//	}
 	
 	@Test
 	public void pesquisaUmaPessoa() {

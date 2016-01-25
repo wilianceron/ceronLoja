@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Service;
 
+import br.com.ceronloja.ws.PessoaBean;
 import br.com.ceronloja.ws.model.Pessoa;
 
 @Service
@@ -13,7 +14,7 @@ public interface PessoaService {
 	
 	Pessoa findOne(Long id);
 	
-	Pessoa create(Pessoa pessoa);
+	Pessoa create(PessoaBean pessoa);
 	
 	Pessoa update(Pessoa pessoa);
 	

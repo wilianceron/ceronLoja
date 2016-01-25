@@ -12,27 +12,12 @@
     <script src="lib/bootstrap-material-design/dist/js/ripples.js" rel="stylesheet"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/configs/routers.js"></script>
+    <script src="js/service/pessoaService.js"></script>
 
-    <script type="text/javascript">
-        angular.module("EstoqueApp", ['ngRoute']);
-        angular.module("EstoqueApp").controller('NavBarCtrl', function($scope) {
-        });
-
-        angular.module("EstoqueApp").config(function($routeProvider, $locationProvider) {
-            // $locationProvider.html5Mode(true);
-            // $locationProvider.hashPrefix("!");
-
-            $routeProvider.when("/novo", {
-                controller : 'NovoCtrl',
-                templateUrl : 'novo.html'
-            }).otherwise("/index");
-        });
-
-        angular.module("EstoqueApp").controller('NovoCtrl', function($scope) {
-
-        });
-    </script>
-
+    <script src="js/controllers/NavBarCtrl.js"></script>
+    <script src="js/controllers/NovaPessoaCtrl.js"></script>
 </head>
 
 <body>
@@ -48,16 +33,13 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/novo">Novo<div class="ripple-container"></div></a></li>
+                    <li><a href="/#/novaPessoa">NovaPessoa<div class="ripple-container"></div></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
         <div ng-view />
-        <!--<div class="well well-default">-->
-            <!--<a class="btn btn-default">teste</a>-->
-        <!--</div>-->
     </div>
 
 

@@ -6,15 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.ceronloja.ws.PessoaBean;
 import br.com.ceronloja.ws.model.Pessoa;
 import br.com.ceronloja.ws.service.PessoaService;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class PessoaController {
 	
@@ -53,7 +56,7 @@ public class PessoaController {
 				   method = RequestMethod.POST, 
 				 consumes = MediaType.APPLICATION_JSON_VALUE, 
 				 produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> criaPessoa(@RequestBody Pessoa pessoa) {
+	public ResponseEntity<Pessoa> criaPessoa(@RequestBody PessoaBean pessoa) {
 		Pessoa pessoaSalva = pessoaService.create(pessoa);
 		
 		return new ResponseEntity<Pessoa>(pessoaSalva, HttpStatus.CREATED);

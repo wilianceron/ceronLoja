@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import br.com.ceronloja.ws.PessoaBean;
+
 @Entity
 public class Pessoa {
 
@@ -16,6 +18,7 @@ public class Pessoa {
 	private String nome;
 	private String cpf;
 	private String sexo;
+	private String email;
 	
 	public String getCpf() {
 		return cpf;
@@ -46,6 +49,11 @@ public class Pessoa {
 	public Pessoa() {
 	}
 
+	public Pessoa(PessoaBean pessoaBean) {
+		this.nome = pessoaBean.nome;
+		this.email = pessoaBean.email;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -60,5 +68,13 @@ public class Pessoa {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
