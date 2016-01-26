@@ -5,5 +5,9 @@ angular.module("EstoqueApp").config(function($routeProvider, $locationProvider) 
     $routeProvider.when("/novaPessoa", {
         controller : 'NovaPessoaCtrl',
         templateUrl : 'novaPessoa.html'
-    }).otherwise("/index");
+    }).when("/pessoas", {
+        controller : 'PessoasCtrl',
+        templateUrl : 'pessoas.html'
+    })
+        .otherwise("/index");
 });
