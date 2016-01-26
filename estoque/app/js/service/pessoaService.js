@@ -8,7 +8,7 @@ angular.module('EstoqueApp').service('pessoaService', function($http) {
     this.criaPessoa = function(pessoa) {
         pessoas.push(pessoa);
         //$http.post("http://10.42.12.161:8080/api/pessoas", pessoa);
-    };s
+    };
 
     this.pessoas = function() {
         return pessoas;

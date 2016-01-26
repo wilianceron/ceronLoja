@@ -5,9 +5,18 @@ angular.module("EstoqueApp").config(function($routeProvider, $locationProvider) 
     $routeProvider.when("/novaPessoa", {
         controller : 'NovaPessoaCtrl',
         templateUrl : 'novaPessoa.html'
-    }).when("/pessoas", {
-        controller : 'PessoasCtrl',
+    })
+    .when("/pessoas", {
+        controller : 'PessoaCtrl',
         templateUrl : 'pessoas.html'
+    })
+    .when("/novoProduto", {
+        controller : 'NovoProdutoCtrl',
+        templateUrl : 'novoProduto.html'
+    })
+    .when("/produtos", {
+        controller : 'ProdutoCtrl',
+        templateUrl : 'produtos.html'
     })
         .otherwise("/index");
 });

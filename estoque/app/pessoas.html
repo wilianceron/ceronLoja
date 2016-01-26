@@ -1,5 +1,19 @@
-<div ng-controller="PessoasCtrl">
-    <div ng-repeat="pessoa in pessoas">
-        {{pessoa.nome}}
-    </div>
+<div ng-controller="PessoaCtrl" class="well">
+
+    <table class="table table-hover ">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="pessoa in pessoas">
+            <tr>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <span href="javascript:void(0)" class="btn btn-info btn-fab" ng-click="showNovaPessoa()"><i class="material-icons">grade</i></span>
+
 </div>
