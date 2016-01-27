@@ -1,19 +1,45 @@
-<div ng-controller="PessoaCtrl" class="well">
+<div ng-controller="PessoaCtrl" class="container">
+    <div class="well" style="height: 70%">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="pessoa in getPessoas() track by $index">
+                <tr>
+                    <td>{{pessoa.nome}}</td>
+                    <td>{{pessoa.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <span class="btn btn-info btn-fab" ng-click="toggleModal()"><i class="material-icons">grade</i></span>
+    </div>
 
-    <table class="table table-hover ">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>E-mail</th>
-            </tr>
-        </thead>
-        <tbody ng-repeat="pessoa in pessoas">
-            <tr>
-                <td>{{pessoa.nome}}</td>
-                <td>{{pessoa.email}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <span href="javascript:void(0)" class="btn btn-info btn-fab" ng-click="showNovaPessoa()"><i class="material-icons">grade</i></span>
-
+    <modal title="Nova Pessoa" visible="showModal">
+        <form class="form-horizontal" ng-submit="criaPessoa(pessoa)">
+            <fieldset>
+                <div class="form-group">
+                    <label for="inputNome" class="col-md-2 control-label">Nome</label>
+                    <div class="col-md-10">
+                        <input type="text" ng-model="pessoa.nome" class="form-control" id="inputNome" placeholder="Nome">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-2 control-label">Email</label>
+                    <div class="col-md-10">
+                        <input type="email" ng-model="pessoa.email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button type="button" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </modal>
 </div>
+
