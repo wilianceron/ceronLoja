@@ -6,13 +6,13 @@ angular.module("EstoqueApp").config(function($routeProvider, $locationProvider) 
         controller : 'PessoaCtrl',
         templateUrl : 'pessoas.html'
     })
-    .when("/novoProduto", {
-        controller : 'NovoProdutoCtrl',
-        templateUrl : 'novoProduto.html'
-    })
     .when("/produtos", {
         controller : 'ProdutoCtrl',
         templateUrl : 'produtos.html'
+    })
+    .when("/venda", {
+        controller : 'VendaCtrl',
+        templateUrl : 'venda.html'
     })
         .otherwise("/index");
 });

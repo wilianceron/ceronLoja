@@ -12,5 +12,11 @@ angular.module('EstoqueApp').service('pessoaService', function($http) {
 
     this.pessoas = function() {
         return pessoas;
+    };
+
+    this.pesquisaPessoa = function(nomePesquisa) {
+        return pessoas.filter(function(pessoa) {
+            if(pessoa.nome == nomePesquisa) return pessoa;
+        });
     }
 });
