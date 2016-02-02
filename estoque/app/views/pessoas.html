@@ -7,9 +7,9 @@
                     <th>E-mail</th>
                 </tr>
             </thead>
-            <tbody ng-repeat="pessoa in getPessoas() track by $index">
+            <tbody ng-repeat="pessoa in pessoas">
                 <tr>
-                    <td>{{pessoa.nome}}</td>
+                    <td>{{pessoa.name}}</td>
                     <td>{{pessoa.email}}</td>
                 </tr>
             </tbody>
@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label for="inputNome" class="col-md-2 control-label">Nome</label>
                     <div class="col-md-10">
-                        <input type="text" ng-model="pessoa.nome" class="form-control" id="inputNome" placeholder="Nome">
+                        <input type="text" ng-model="pessoa.name" class="form-control" id="inputNome" placeholder="Nome">
                     </div>
                 </div>
                 <div class="form-group">
