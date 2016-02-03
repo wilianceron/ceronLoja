@@ -1,5 +1,6 @@
 target/
 .idea
-.idea/
+.idea/*
 *.yml
 out
+.idea/workspace.xml
