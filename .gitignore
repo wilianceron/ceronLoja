@@ -3,4 +3,4 @@ target/
 .idea/*
 *.yml
 out
-.idea/workspace.xml
+estoque/.idea/workspace.xml
