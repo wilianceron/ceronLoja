@@ -7,47 +7,47 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.ceronloja.ws.PessoaBean;
-import br.com.ceronloja.ws.model.Pessoa;
-import br.com.ceronloja.ws.repository.PessoaRepository;
+import br.com.ceronloja.ws.PersonBean;
+import br.com.ceronloja.ws.model.Person;
+import br.com.ceronloja.ws.repository.PersonRepository;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS,
 			      readOnly = true)
-public class PessoaServiceBean implements PessoaService {
+public class PersonServiceBean implements PersonService {
 
 	@Autowired
-	private PessoaRepository repository;
+	private PersonRepository repository;
 	
 	@Override
-	public Collection<Pessoa> findAll() {
+	public Collection<Person> findAll() {
 		return repository.findAll();
 	}
 
 	@Override
-	public Pessoa findOne(Long id) {
+	public Person findOne(Long id) {
 		return repository.findOne(id);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-	public Pessoa create(PessoaBean pessoaBean) {
-		if(pessoaBean.id != null)
+	public Person create(PersonBean personBean) {
+		if(personBean.id != null)
 			return null;
 		
-		Pessoa pessoa = new Pessoa(pessoaBean);
-		return repository.save(pessoa);
+		Person person = new Person(personBean);
+		return repository.save(person);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED,
 	  readOnly = true)
-	public Pessoa update(Pessoa pessoa) {
-		Pessoa pessoaPersistida = findOne(pessoa.getId());
-		if(pessoaPersistida == null)
+	public Person update(Person person) {
+		Person personPersistida = findOne(person.getId());
+		if(personPersistida == null)
 			return null;
 		
-		return repository.save(pessoa);
+		return repository.save(person);
 	}
 
 	@Override
@@ -55,6 +55,11 @@ public class PessoaServiceBean implements PessoaService {
 	  readOnly = true)
 	public void delete(Long id) {
 		repository.delete(id);
+	}
+
+	@Override
+	public Person findByName(String name) {
+		return repository.findByName(name);
 	}
 
 }

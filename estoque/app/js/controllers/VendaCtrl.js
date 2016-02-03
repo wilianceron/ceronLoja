@@ -1,15 +1,17 @@
 angular.module("EstoqueApp").controller('VendaCtrl', function($scope, pessoaService, vendaService, produtoService) {
-    $scope.vendas = vendaService.vendas;
     $scope.pessoaSelecionada = null;
-    $scope.produtosDisponiveis = produtoService.produtos();
+    $scope.produtoSelecionado = null;
 
     $scope.pesquisaPessoa = function(nome) {
-        $scope.pessoaSelecionada = pessoaService.pesquisaPessoa(nome);
-
+        pessoaService.pesquisaPessoa(nome).success(function(data) {
+            $scope.pessoaSelecionada = data;
+        });
     };
 
-    $scope.adicionaProduto = function(nomeProduto) {
-
+    $scope.pesquisaProduto = function(nomeProduto) {
+        produtoService.pesquisaProduto(nomeProduto).success(function(data) {
+            $scope.produtoSelecionado = data;
+        });
     };
 
     $scope.mostraProdutos = function() {

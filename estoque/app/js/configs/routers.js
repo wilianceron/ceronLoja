@@ -4,15 +4,15 @@ angular.module("EstoqueApp").config(function($routeProvider, $locationProvider) 
 
     $routeProvider.when("/pessoas", {
         controller : 'PessoaCtrl',
-        templateUrl : 'pessoas.html'
+        templateUrl : 'views/pessoas.html'
     })
     .when("/produtos", {
         controller : 'ProdutoCtrl',
-        templateUrl : 'produtos.html'
+        templateUrl : 'views/produtos.html'
     })
     .when("/venda", {
         controller : 'VendaCtrl',
-        templateUrl : 'venda.html'
+        templateUrl : 'views/venda.html'
     })
         .otherwise("/index");
 });
