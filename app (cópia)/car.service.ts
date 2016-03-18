@@ -8,7 +8,7 @@ export class CarService {
   getCars() {
     return carsPromise;
   }
-  getCar(id: string) {
+  getCar(id:string) {
     return carsPromise.then(cars => cars.filter(car => car.id == id)[0]);
   }
   addCar(newCar: Car) {

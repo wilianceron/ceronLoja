@@ -1,9 +1,9 @@
 {
-  "name": "app05-01",
+  "name": "app",
   "version": "1.0.0",
   "scripts": {
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
+    "tsc:w": "tsc -w --outDir app/public",
     "lite": "lite-server",
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
   },
