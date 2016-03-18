@@ -4,3 +4,4 @@ target/
 *.yml
 out
 estoque/.idea/workspace.xml
+angular2/app07-01/app/public/
