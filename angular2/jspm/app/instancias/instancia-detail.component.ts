@@ -5,7 +5,7 @@ import {Instancia} from './instancia';
 import {InstanciaService} from './instancia.service';
 
 @Component({
-  template: `
+    template: `
       <h3>Instancia Detail Component</h3>
       <div *ngIf="instancia">
         <table class="table">
@@ -31,14 +31,15 @@ import {InstanciaService} from './instancia.service';
     directives: [ROUTER_DIRECTIVES]
 })
 export class InstanciaDetailComponent {
-  instancia: Instancia;
-  
-  constructor(
-    private _routeParams:RouteParams,
-    private _service:InstanciaService){}
-    
+    instancia:Instancia;
+
+    constructor(private _routeParams:RouteParams,
+                private _service:InstanciaService) {
+    }
+
     ngOnInit() {
-      let id = this._routeParams.get('id');
-      this._service.getInstancia(id).then(instancia => this.instancia = instancia);
+        let id = this._routeParams.get('id');
+        this._service.getInstancia(id).then(instancia => this.instancia = instancia);
+        console.log(this.instancia);
     }
 }

@@ -5,16 +5,21 @@ import {ProcessoSuporteService} from './processo-suporte.service';
 import {ProcessoSuporte} from './processoSuporte';
 
 @Component({
-	templateUrl : 'app/processo-suporte/processo-suporte.html',
-	providers: [ProcessoSuporteService]
+    templateUrl: 'app/processo-suporte/processo-suporte.html',
+    providers: [ProcessoSuporteService]
 })
 
 export class ProcessoSuporteComponent {
-	processosSuporte: ProcessoSuporte[]
+    processosSuporte:ProcessoSuporte[];
 
-	constructor(private _service: ProcessoSuporteService){}
+    constructor(private _router:Router, private _service:ProcessoSuporteService) {
+    }
 
-	ngOnInit() {
-		this._service.getProcessos().then(processosSuporte => this.processosSuporte = processosSuporte);
-	}
+    ngOnInit() {
+        this._service.getProcessosSuporte().then(processosSuporte => this.processosSuporte = processosSuporte);
+    }
+
+    configure(id:string) {
+        this._router.navigate(['ProcessoSuporteConfigure', {id: id}]);
+    }
 }

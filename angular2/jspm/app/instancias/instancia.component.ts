@@ -5,7 +5,7 @@ import {Instancia} from './instancia';
 import {InstanciaService} from './instancia.service';
 
 @Component({
-  template: `
+    template: `
       <h3>Intâncias do jboss</h3>
       <table class="table table-hover">
         <thead>
@@ -23,15 +23,16 @@ import {InstanciaService} from './instancia.service';
     `
 })
 export class InstanciaComponent {
-  instancias: Instancia[];
+    instancias:Instancia[];
 
-  constructor(private _router: Router, private _service: InstanciaService) { }
+    constructor(private _router:Router, private _service:InstanciaService) {
+    }
 
-  ngOnInit() {
-    this._service.getInstancias().then(instancias => this.instancias = instancias);
-  }
+    ngOnInit() {
+        this._service.getInstancias().then(instancias => this.instancias = instancias);
+    }
 
-  onSelect(instancia: Instancia) {
-    this._router.navigate(['InstanciaDetail', { id: instancia.id }]);
-  }
+    onSelect(instancia:Instancia) {
+        this._router.navigate(['InstanciaDetail', {id: instancia.id}]);
+    }
 }
