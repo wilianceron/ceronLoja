@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="app/produto/produto.css">
+<div class="panel">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col l10 offset-l1 s8">
+				<table class="bordered striped responsive-table">
+					<thead>
+						<tr>
+							<th>nome</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="produto in produtos">
+							<td>{{produto.nome}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col l10 offset-l1">
+				<a class="waves-effect waves-light btn pull-right" href="#produto/novo/">Novo</a>
+			</div>
+		</div>
+	</div>
+</div>

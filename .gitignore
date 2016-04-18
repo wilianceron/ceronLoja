@@ -4,8 +4,6 @@ target/
 *.yml
 *.iml
 out
-estoque/.idea/workspace.xml
-angular2/app07-01/app/public/
 *node_modules/
 *jspm_packages/
-angular2/jspm/jspm/jspm_packages/
+jspm/jspm_packages/
