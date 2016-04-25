@@ -1,5 +1,9 @@
 import angular from 'angular';
-import jquery from 'jquery';
+import 'jquery';
+import 'bootstrap';
+import 'materialize';
+import 'bootstrap/css/bootstrap.css!'
+import 'materialize/dist/css/materialize.css!'
 
 import ProdutoNovoController from './produto-novo.controller.js';
 import ProdutoController from './produto.controller.js';

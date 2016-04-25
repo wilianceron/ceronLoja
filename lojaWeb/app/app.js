@@ -1,6 +1,10 @@
 import angular from 'angular';
 import routesModule from './routes';
-import bootstrap from 'bootstrap';
+import 'jquery';
+import 'bootstrap';
+import 'materialize';
+import 'bootstrap/css/bootstrap.css!'
+import 'materialize/dist/css/materialize.css!'
 
 const dependencies = [
 	routesModule.name,
