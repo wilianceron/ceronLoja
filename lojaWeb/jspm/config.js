@@ -17,6 +17,7 @@ System.config({
   map: {
     "angular": "github:angular/bower-angular@1.5.3",
     "angular-route": "github:angular/bower-angular-route@1.5.3",
+    "arrive": "npm:arrive@2.3.1",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
@@ -50,6 +51,9 @@ System.config({
     },
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "npm:jquery@2.2.3"
+    },
+    "npm:arrive@2.3.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
