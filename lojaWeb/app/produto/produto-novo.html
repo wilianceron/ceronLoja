@@ -1,17 +1,22 @@
 <div class="row">
     <div class="col l12">
-        <form>
+        <form ng-submit="ctrl.salva(produto)">
             <div class="row">
                 <div class="input-field col l8 offset-l2">
-                    <input id="codigo" type="text" class="validate">
+                    <input id="codigo" type="text" class="validate" ng-model="produto.codigo">
                     <label for="codigo">Código</label>
                 </div>
                 <div class="input-field col l8 offset-l2">
-                    <input id="nome" type="text" class="validate">
+                    <input id="nome" type="text" class="validate" ng-model="produto.nome">
                     <label for="nome">Nome</label>
                 </div>
-                <coolSelect/>
+                <coolSelect options="items"></coolSelect>
+
+                <div class="input-field col l8 offset-l2">
+                    <input class="waves-effect waves-light btn" type="submit" value="Submit">
+                </div>
             </div>
         </form>
     </div>
 </div>
+{{produto}}

@@ -13,6 +13,10 @@ function ProdutoService() {
 	this.getProduto = function(nome) {
 		return _.filter(produto, function(produto) { return produto.nome === nome })[0];
 	}
+
+	this.salvaProduto = function(produto) {
+		produtos.push(produto);
+	}
 };
 
 export default ProdutoService;

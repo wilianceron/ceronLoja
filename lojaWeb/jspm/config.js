@@ -16,6 +16,7 @@ System.config({
 
   map: {
     "angular": "github:angular/bower-angular@1.5.3",
+    "angular-materialize": "bower:angular-materialize@0.1.4",
     "angular-route": "github:angular/bower-angular-route@1.5.3",
     "arrive": "npm:arrive@2.3.1",
     "babel": "npm:babel-core@5.8.38",
@@ -27,6 +28,11 @@ System.config({
     "materialize": "bower:materialize@0.97.6",
     "typescript": "npm:typescript@1.8.9",
     "underscore": "npm:underscore@1.8.3",
+    "bower:angular-materialize@0.1.4": {
+      "angular": "bower:angular@1.5.5",
+      "jquery": "bower:jquery@2.2.3",
+      "materialize": "bower:materialize@0.97.6"
+    },
     "bower:materialize@0.97.6": {
       "css": "github:systemjs/plugin-css@0.1.21",
       "jquery": "bower:jquery@2.2.3"

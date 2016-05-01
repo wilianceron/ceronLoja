@@ -10,6 +10,7 @@
     "configFile": "jspm/config.js",
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.5.3",
+      "angular-materialize": "bower:angular-materialize@^0.1.4",
       "angular-route": "github:angular/bower-angular-route@^1.5.3",
       "arrive": "npm:arrive@^2.3.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",

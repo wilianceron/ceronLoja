@@ -1,9 +1,15 @@
-<div class="input-field col s12">
-    <select>
-        <option value="" disabled selected>Tamanho</option>
-        <option value="P">P</option>
-        <option value="M">M</option>
-        <option value="G">G</option>
+<div class="input-field col s8 l8 offset-l2">
+
+    <select class="" ng-model="produto.tamanho" material-select watch>
+        <option ng-repeat="option in options">{{option.name}}</option>
     </select>
+
+    <!--<select ng-options="option as option.nome for option in options track by option.id" ng-model="produto.tamanho"></select>-->
+    <!--<select>-->
+        <!--<option value="" disabled selected>Tamanho</option>-->
+        <!--<option value="P">P</option>-->
+        <!--<option value="M">M</option>-->
+        <!--<option value="G">G</option>-->
+    <!--</select>-->
     <label>Tamanho</label>
 </div>
