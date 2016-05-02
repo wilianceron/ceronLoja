@@ -1,8 +1,8 @@
 import angular from 'angular';
-import angularMaterialize from 'angular-materialize';
+import 'angular-materialize';
 
 const dependencies = [
-	angularMaterialize.name
+	'ui.materialize'
 ];
 
 var module = angular.module('commons', dependencies)
