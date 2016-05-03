@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>    
+    <title>Loja Web</title>
+    <script src="jspm/jspm_packages/system.js"></script>
+    <script src="jspm/config.js"></script>
+
+	<script>
+		System.import('app/app').then(function(app) {
+			angular.element(document).ready(function() {
+				angular.bootstrap(document, [app.default.name]);
+			});
+		});
+	</script>
+</head>
+<body>
+	<nav>
+	    <div class="nav-wrapper">
+	        <ul id="nav-mobile" class="left">
+	            <li><a href="#/produto">Produtos</a></li>
+	        </ul>
+	    </div>
+	</nav>
+	<div class="container" style="padding-top:10px">
+		<div class="well" style="background-color:white">
+			<div ng-view></div>
+		</div>
+	</div>
+</body>
+</html>

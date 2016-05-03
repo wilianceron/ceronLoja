@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col l12">
+        <form ng-submit="ctrl.salva(produto)">
+            <div class="row">
+                <div class="col l8 offsetl2">
+                    <input-field>
+                        <input id="codigo" type="text" class="validate" ng-model="produto.codigo">
+                        <label for="codigo">Código</label>
+                    </input-field>
+                    <input-field>
+                        <input id="nome" type="text" class="validate" ng-model="produto.nome">
+                        <label for="nome">Nome</label>
+                    </input-field>
+                    
+                    <coolSelect options="items"></coolSelect>
+
+                    <input-field>
+                        <input class="waves-effect waves-light btn" type="submit" value="Submit">
+                    </input-field>
+                </div>  
+            </div>
+        </form>
+    </div>
+</div>
+{{produto}}
