@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col l12">
-        <form ng-submit="ctrl.salva(produto)">
+        <form ng-submit="salva(produto)">
             <div class="row">
                 <div class="col l8 offsetl2">
                     <input-field>
@@ -11,15 +11,21 @@
                         <input id="nome" type="text" class="validate" ng-model="produto.nome">
                         <label for="nome">Nome</label>
                     </input-field>
-                    
-                    <coolSelect options="items"></coolSelect>
 
                     <input-field>
-                        <input class="waves-effect waves-light btn" type="submit" value="Submit">
+                        <select  ng-model="produto.tamanho" material-select watch>
+                            <option value="" disabled selected>Tamanho</option>
+                            <option ng-repeat="item in itens">{{item.nome}}</option>
+                        </select>
                     </input-field>
-                </div>  
+
+                    <input-field>
+                        <input class="waves-effect waves-light btn" type="submit" value="Salvar">
+                    </input-field>
+
+                    <a href="#produto/" class="waves-effect waves-light btn">Voltar</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
-{{produto}}

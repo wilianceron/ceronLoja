@@ -12,13 +12,14 @@ function coolSelect(){
 	return {
 		restrict: 'E',
 		name: 'coolselect',
-		controller: function() {
-		 	$('select').material_select();
-		 },
-		scope: {
-			options : "="
-		},
-		templateUrl: 'app/commons/coolselect.html'
+		scope: true,
+		templateUrl: 'app/commons/coolselect.html',
+		controller: function($scope) {
+			$scope.changed = function() {
+				$scope.model[$scope.field] = $scope.value;
+			}
+		}
+
 	};
 };
 

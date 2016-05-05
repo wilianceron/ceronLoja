@@ -36,33 +36,21 @@ public class ProdutoController {
 	@RequestMapping(value = "/produto",
 			       method = RequestMethod.GET,
 			     produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<Produto>> getPersons() {
+	public ResponseEntity<Collection<Produto>> getProdutos() {
 		Collection<Produto> produtos = produtoService.findAll();
 		
-		return new ResponseEntity<Collection<Produto>>(produtos, HttpStatus.OK);
+		return new ResponseEntity<>(produtos, HttpStatus.OK);
 	}
-	
-	@RequestMapping(value = "/produto/{id}",
-				   method = RequestMethod.GET, 
-				 produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Produto> findByName(@PathVariable("id") Long id) {
-		Produto produto = produtoService.findOne(id);
-		
-		if(produto == null)
-			return new ResponseEntity<Produto>(HttpStatus.NOT_FOUND);
-		
-		return new ResponseEntity<Produto>(produto, HttpStatus.OK);
-	}
-	
+
 	@Transactional
 	@RequestMapping(value = "/produto", 
 				   method = RequestMethod.POST, 
 				 consumes = MediaType.APPLICATION_JSON_VALUE, 
 				 produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Produto> createPerson(@RequestBody ProdutoBean person) {
-		Produto produtoToSave = produtoService.create(person);
+	public ResponseEntity<Produto> criaProduto(@RequestBody ProdutoBean produto) {
+		Produto produtoToSave = produtoService.create(produto);
 		
-		return new ResponseEntity<Produto>(produtoToSave, HttpStatus.CREATED);
+		return new ResponseEntity<>(produtoToSave, HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "/persons/{id}", 
@@ -73,15 +61,15 @@ public class ProdutoController {
 		Produto produtoUpdated = produtoService.update(produto);
 		
 		if(produtoUpdated == null)
-			return new ResponseEntity<Produto>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		
-		return new ResponseEntity<Produto>(produtoUpdated, HttpStatus.OK);
+		return new ResponseEntity<>(produtoUpdated, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/produto/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Produto> delete(@PathVariable("id") Long id, @RequestBody Produto produto) {
 		produtoService.delete(id);
 		
-		return new ResponseEntity<Produto>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }

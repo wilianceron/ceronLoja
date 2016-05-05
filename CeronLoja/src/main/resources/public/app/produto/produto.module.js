@@ -4,6 +4,7 @@ import commons from '../commons/commons';
 import 'jquery';
 import 'bootstrap';
 import 'materialize';
+import 'angular-materialize';
 import 'bootstrap/css/bootstrap.css!'
 import 'materialize/dist/css/materialize.css!'
 
@@ -12,7 +13,7 @@ import ProdutoController from './produto.controller.js';
 import ProdutoService from './produto.service.js';
 
 const dependencies = [
-	commons.name
+    'ui.materialize'
 ];
 
 
