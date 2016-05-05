@@ -1,5 +1,5 @@
 import angular from 'angular';
-import commons from '../commons/commons';
+
 
 import 'jquery';
 import 'bootstrap';
