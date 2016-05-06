@@ -19,8 +19,7 @@ const dependencies = [
 
 var module = angular.module('produto', dependencies)
     .controller(ProdutoController.name, ProdutoController)
-    .service('ProdutoService', ProdutoService)
-    .service(NavBarService.name, NavBarService);
+    .service('ProdutoService', ProdutoService);
 
 module.rota = {
     controller: ProdutoController.name,

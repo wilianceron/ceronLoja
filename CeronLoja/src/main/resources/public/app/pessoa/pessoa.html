@@ -1,0 +1,52 @@
+<div class="card" ng-show="exibeNovaPessoa">
+    <div class="card-content">
+        <span class="card-title">Nova Pessoa</span>
+        <div class="row">
+            <div class="col l12">
+                <form ng-submit="salvaPessoa(pessoa)">
+                    <div class="row">
+                        <div class="col l4">
+                            <input-field>
+                                <input id="nome" type="text" class="validate" ng-model="pessoa.nome">
+                                <label for="nome">Nome</label>
+                            </input-field>
+                        </div>
+                        <div class="col l4">
+                            <input-field>
+                                <input id="sexo" type="text" class="validate" ng-model="pessoa.sexo">
+                                <label for="sexo">Sexo</label>
+                            </input-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input-field>
+                            <input class="waves-effect waves-light btn" type="submit" value="Salvar">
+                        </input-field>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Pessoas</span>
+        <div class="row">
+            <div class="col l10 offset-l1 s8">
+                <table class="bordered striped responsive-table">
+                    <thead>
+                    <tr>
+                        <th>nome</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="pessoa in pessoas">
+                        <td>{{pessoa.nome}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

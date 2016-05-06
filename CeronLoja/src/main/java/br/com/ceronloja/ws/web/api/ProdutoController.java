@@ -53,11 +53,11 @@ public class ProdutoController {
 		return new ResponseEntity<>(produtoToSave, HttpStatus.CREATED);
 	}
 	
-	@RequestMapping(value = "/persons/{id}", 
+	@RequestMapping(value = "/produto/{id}",
 			       method = RequestMethod.PUT, 
 			     consumes = MediaType.APPLICATION_JSON_VALUE, 
 			     produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Produto> update(@RequestBody Produto produto) {
+	public ResponseEntity<Produto> update(@RequestBody ProdutoBean produto) {
 		Produto produtoUpdated = produtoService.update(produto);
 		
 		if(produtoUpdated == null)
@@ -67,7 +67,7 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping(value = "/produto/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Produto> delete(@PathVariable("id") Long id, @RequestBody Produto produto) {
+	public ResponseEntity<Produto> delete(@PathVariable("id") Long id) {
 		produtoService.delete(id);
 		
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);

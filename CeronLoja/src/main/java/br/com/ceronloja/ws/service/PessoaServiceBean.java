@@ -1,53 +1,55 @@
 package br.com.ceronloja.ws.service;
 
-import java.util.Collection;
-
+import br.com.ceronloja.ws.PessoaBean;
+import br.com.ceronloja.ws.ProdutoBean;
+import br.com.ceronloja.ws.model.Pessoa;
 import br.com.ceronloja.ws.model.Produto;
+import br.com.ceronloja.ws.repository.PessoaRepository;
+import br.com.ceronloja.ws.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.ceronloja.ws.ProdutoBean;
-import br.com.ceronloja.ws.repository.ProdutoRepository;
+import java.util.Collection;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS,
 			      readOnly = true)
-public class ProdutoServiceBean implements ProdutoService {
+public class PessoaServiceBean implements PessoaService {
 
 	@Autowired
-	private ProdutoRepository repository;
+	private PessoaRepository repository;
 	
 	@Override
-	public Collection<Produto> findAll() {
+	public Collection<Pessoa> findAll() {
 		return repository.findAll();
 	}
 
 	@Override
-	public Produto findOne(Long id) {
+	public Pessoa findOne(Long id) {
 		return repository.findOne(id);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-	public Produto create(ProdutoBean produtoBean) {
-		if(produtoBean.id != null)
+	public Pessoa create(PessoaBean pessoaBean) {
+		if(pessoaBean.id != null)
 			return null;
 		
-		Produto produto = new Produto(produtoBean);
-		return repository.save(produto);
+		Pessoa pessoa = new Pessoa(pessoaBean);
+		return repository.save(pessoa);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED,
 	  readOnly = true)
-	public Produto update(ProdutoBean produto) {
-		Produto produtoPersistido = findOne(Long.parseLong(produto.id));
-		if(produtoPersistido == null)
+	public Pessoa update(Pessoa pessoa) {
+		Pessoa pessoaPersistida = findOne(pessoa.getId());
+		if(pessoaPersistida == null)
 			return null;
-
-		return repository.save(new Produto(produto));
+		
+		return repository.save(pessoa);
 	}
 
 	@Override

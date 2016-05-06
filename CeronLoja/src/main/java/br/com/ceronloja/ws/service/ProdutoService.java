@@ -16,7 +16,7 @@ public interface ProdutoService {
 
 	Produto create(ProdutoBean produtoBean);
 	
-	Produto update(Produto produto);
+	Produto update(ProdutoBean produto);
 	
 	void delete(Long id);
 }

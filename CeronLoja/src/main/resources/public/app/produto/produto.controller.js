@@ -1,4 +1,5 @@
 import ProdutoService from './produto.service.js';
+import NavBarService from '../navbar/navbar.service.js';
 
  function ProdutoController($scope,ProdutoService, NavBarService) {
      $scope.produto = null;
@@ -14,8 +15,9 @@ import ProdutoService from './produto.service.js';
      }
 
      $scope.salvaProduto = function(produto) {
-         ProdutoService.salvaProduto(produto).success(function() {
+         ProdutoService.salvaProduto(produto).then(function(response) {
              carregaProdutos();
+             $scope.produto = {};
          });
      }
 
