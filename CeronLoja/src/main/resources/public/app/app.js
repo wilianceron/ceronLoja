@@ -1,13 +1,12 @@
 import angular from 'angular';
-import routesModule from './routes';
-import 'jquery';
-import 'bootstrap';
-import 'materialize';
-import 'bootstrap/css/bootstrap.css!'
-import 'materialize/dist/css/materialize.css!'
+
+import RoutesModule from './routes';
+import NavBarModule from './navbar/navbar.module.js';
+import '../index.css!';
 
 const dependencies = [
-	routesModule.name,
+	RoutesModule.name,
+	NavBarModule.name
 ];
 
 export default angular.module('lojaweb', dependencies);

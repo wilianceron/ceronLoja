@@ -1,6 +1,51 @@
-<link rel="stylesheet" type="text/css" href="app/produto/produto.css">
-<div class="panel">
-	<div class="panel-body">
+<div class="card" ng-show="exibeNovoProduto">
+	<div class="card-content">
+		<span class="card-title">Novo Produto</span>
+		<div class="row">
+			<div class="col l12">
+				<form ng-submit="salvaProduto(produto)">
+					<div class="row">
+						<div class="col l12">
+							<div class="row">
+								<div class="col l4">
+									<input-field>
+									<input id="nome" type="text" class="validate" ng-model="produto.nome">
+									<label for="nome">Nome</label>
+									</input-field>
+								</div>
+								<div class="col l4">
+									<input-field>
+										<input id="codigo" type="text" class="validate" ng-model="produto.codigo">
+										<label for="codigo">Código</label>
+									</input-field>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col l4">
+									<input-field class="l3">
+										<input id="tamanho" type="text" class="validate" ng-model="produto.tamanho">
+										<label for="tamanho">Tamanho</label>
+									</input-field>
+								</div>
+							</div>
+							<div class="row">
+								<input-field>
+									<input class="waves-effect waves-light btn" type="submit" value="Ok">
+								</input-field>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="card">
+	<div class="card-content">
+		<span class="card-title">Produtos</span>
 		<div class="row">
 			<div class="col l10 offset-l1 s8">
 				<table class="bordered striped responsive-table">
@@ -15,11 +60,6 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col l10 offset-l1">
-				<a class="waves-effect waves-light btn pull-right" href="#produto/novo/">Novo</a>
 			</div>
 		</div>
 	</div>

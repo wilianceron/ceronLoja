@@ -22,7 +22,6 @@ function config($routeProvider) {
     $routeProvider
         .when('/home', home.rota)
         .when('/produto', produto.rota)
-        .when('/produto/novo', produto.rotaNovo)
         .otherwise('/home');
 }
 

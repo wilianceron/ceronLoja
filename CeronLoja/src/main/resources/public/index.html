@@ -13,17 +13,31 @@
 		});
 	</script>
 </head>
-<body>
-	<nav>
-	    <div class="nav-wrapper">
-	        <ul id="nav-mobile" class="left">
-	        </ul>
-	    </div>
-	</nav>
+<style>header, main, footer {
+	padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+}</style>
+	<div ng-controller="NavBarController">
+		<nav>
+			<ul class="hide-on-med-and-down">
+				<li><a href="#/atendimento">Atendimento</a></li>
+				<li><a href="#/produto">Estoque</a></li>
+			</ul>
+			<ul id="slide-out" class="side-nav fixed absolute-position" style="top:64px">
+				<li class="bold" ng-repeat="item in itensSideBar()">
+					<a class="waves-effect waves-teal" ng-click="item.callback()">{{item.nome}}</a>
+				</li>
+
+			</ul>
+		</nav>
+	</div>
 	<div class="container" style="padding-top:10px">
-		<div class="well" style="background-color:white">
-			<div ng-view></div>
-		</div>
+		<div ng-view></div>
 	</div>
 </body>
 </html>

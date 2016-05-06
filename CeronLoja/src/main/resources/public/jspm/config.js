@@ -15,7 +15,8 @@ System.config({
   },
 
   map: {
-    "angular": "github:angular/bower-angular@1.5.3",
+    "angular": "github:angular/bower-angular@1.5.5",
+    "angular-animate": "github:angular/bower-angular-animate@1.5.5",
     "angular-materialize": "bower:angular-materialize@0.1.4",
     "angular-route": "github:angular/bower-angular-route@1.5.3",
     "arrive": "npm:arrive@2.3.1",
@@ -37,8 +38,11 @@ System.config({
       "css": "github:systemjs/plugin-css@0.1.21",
       "jquery": "bower:jquery@2.2.3"
     },
+    "github:angular/bower-angular-animate@1.5.5": {
+      "angular": "github:angular/bower-angular@1.5.5"
+    },
     "github:angular/bower-angular-route@1.5.3": {
-      "angular": "github:angular/bower-angular@1.5.3"
+      "angular": "github:angular/bower-angular@1.5.5"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
