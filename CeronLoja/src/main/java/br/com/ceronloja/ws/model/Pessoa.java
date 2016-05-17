@@ -2,9 +2,8 @@ package br.com.ceronloja.ws.model;
 
 import br.com.ceronloja.ws.PessoaBean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Pessoa {
@@ -17,6 +16,9 @@ public class Pessoa {
 
     private String sexo;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pessoa")
+    private List<Venda> vendas;
+
     public Pessoa() {
 
     }
@@ -24,6 +26,14 @@ public class Pessoa {
     public Pessoa(PessoaBean pessoaBean) {
         this.nome = pessoaBean.nome;
         this.sexo = pessoaBean.sexo;
+    }
+
+    public List<Venda> getVendas() {
+        return vendas;
+    }
+
+    public void setVendas(List<Venda> vendas) {
+        this.vendas = vendas;
     }
 
     public void setSexo(String sexo) {

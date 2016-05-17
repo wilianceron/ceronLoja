@@ -1,10 +1,10 @@
 package br.com.ceronloja.ws.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import br.com.ceronloja.ws.ProdutoBean;
+
+import java.util.List;
 
 @Entity
 public class Produto {

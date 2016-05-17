@@ -1,11 +1,11 @@
 function PessoaService($http) {
 
     this.getPessoas = function() {
-        return $http.get("http://10.42.12.161:9090/pessoa");
+        return $http.get("http://localhost:9090/pessoa");
     }
 
     this.salvaPessoa = function(pessoa) {
-        return $http.post("http://10.42.12.161:9090/pessoa", pessoa);
+        return $http.post("http://localhost:9090/pessoa", pessoa);
     }
 }
 
